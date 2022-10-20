@@ -6,11 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-22 01:12+0000\n"
-"PO-Revision-Date: 2022-10-10 13:07+0000\n"
-"Last-Translator: Logan Gônet <logan.gonet@horanet.com>\n"
-"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
-"Language: fr\n"
+"POT-Creation-Date: 2022-10-20 14:24+0000\n"
+"PO-Revision-Date: 2022-10-20 14:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -35,7 +34,8 @@ msgstr "Ajoutez un ou deux mots. Les mots inhabituels sont mieux."
 #: code:addons/setup/password_security/odoo/addons/password_security/models/res_users.py:0
 #, python-format
 msgid "All-uppercase is almost as easy to guess as all-lowercase."
-msgstr "Les majuscules sont presque aussi faciles à deviner que les minuscules."
+msgstr ""
+"Les majuscules sont presque aussi faciles à deviner que les minuscules."
 
 #. module: password_security
 #: model:ir.model.fields,help:password_security.field_res_company__password_minimum
@@ -177,6 +177,11 @@ msgid "Estimation"
 msgstr "Estimation"
 
 #. module: password_security
+#: model:ir.model,name:password_security.model_ir_http
+msgid "HTTP Routing"
+msgstr "Routage HTTP"
+
+#. module: password_security
 #: model:ir.model.fields,field_description:password_security.field_res_company__password_history
 #: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_history
 msgid "History"
@@ -231,7 +236,8 @@ msgstr "Des lettres minuscules (au moins %(password_lower_config)d caractère)"
 #: code:addons/setup/password_security/odoo/addons/password_security/models/res_users.py:0
 #, python-format
 msgid "Lowercase letter (At least %(password_lower_config)d characters)"
-msgstr "Des lettres minuscules (au moins %(password_lower_config)d caractères)"
+msgstr ""
+"Des lettres minuscules (au moins %(password_lower_config)d caractères)"
 
 #. module: password_security
 #: model:ir.model.fields,field_description:password_security.field_res_company__password_minimum
@@ -303,14 +309,16 @@ msgstr "Des chiffres"
 #: code:addons/setup/password_security/odoo/addons/password_security/models/res_users.py:0
 #, python-format
 msgid "Numeric digit (At least %(password_numeric_config)d character)"
-msgstr "Des caractères numériques (au moins %(password_numeric_config)d caractère)"
+msgstr ""
+"Des caractères numériques (au moins %(password_numeric_config)d caractère)"
 
 #. module: password_security
 #: code:addons/password_security/models/res_users.py:0
 #: code:addons/setup/password_security/odoo/addons/password_security/models/res_users.py:0
 #, python-format
 msgid "Numeric digit (At least %(password_numeric_config)d characters)"
-msgstr "Des caractères numériques (au moins %(password_numeric_config)d caractères)"
+msgstr ""
+"Des caractères numériques (au moins %(password_numeric_config)d caractères)"
 
 #. module: password_security
 #: model:ir.model.fields,field_description:password_security.field_res_users__password_history_ids
@@ -445,7 +453,8 @@ msgstr "Des caractères spéciaux"
 #: code:addons/setup/password_security/odoo/addons/password_security/models/res_users.py:0
 #, python-format
 msgid "Special character (At least %(password_special_config)d character)"
-msgstr "Des caractères spéciaux (au moins %(password_special_config)d caractère)"
+msgstr ""
+"Des caractères spéciaux (au moins %(password_special_config)d caractère)"
 
 #. module: password_security
 #: code:addons/password_security/models/res_users.py:0
@@ -467,7 +476,7 @@ msgstr "Les lignes droites des touches du clavier sont faciles à deviner."
 #: code:addons/setup/password_security/odoo/addons/password_security/models/res_users.py:0
 #, python-format
 msgid "Suggestion(s) :"
-msgstr "Suggestion(s) :"
+msgstr ""
 
 #. module: password_security
 #: code:addons/password_security/models/res_company.py:0
@@ -561,51 +570,43 @@ msgstr "Utilisateurs"
 
 #. module: password_security
 #. openerp-web
-#: code:addons/password_security/static/src/js/password_gauge.js:35
-#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:35
+#: code:addons/password_security/static/src/js/password_gauge.js:0
+#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:0
 #, python-format
-msgid "at least "
-msgstr "au moins "
+msgid "at least %d characters"
+msgstr "au moins %d caractères"
 
 #. module: password_security
 #. openerp-web
-#: code:addons/password_security/static/src/js/password_gauge.js:45
-#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:45
+#: code:addons/password_security/static/src/js/password_gauge.js:0
+#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:0
 #, python-format
-msgid " lower case characters"
-msgstr " caractères minuscules"
+msgid "at least %d lower case characters"
+msgstr "au moins %d caractères minuscules"
 
 #. module: password_security
 #. openerp-web
-#: code:addons/password_security/static/src/js/password_gauge.js:39
-#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:39
+#: code:addons/password_security/static/src/js/password_gauge.js:0
+#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:0
 #, python-format
-msgid " characters"
-msgstr " caractères"
+msgid "at least %d numeric characters"
+msgstr "au moins %d caractères numériques"
 
 #. module: password_security
 #. openerp-web
-#: code:addons/password_security/static/src/js/password_gauge.js:51
-#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:51
+#: code:addons/password_security/static/src/js/password_gauge.js:0
+#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:0
 #, python-format
-msgid " upper case characters"
-msgstr " caractères majuscules"
+msgid "at least %d special characters"
+msgstr "au moins %d caractères spéciaux"
 
 #. module: password_security
 #. openerp-web
-#: code:addons/password_security/static/src/js/password_gauge.js:57
-#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:57
+#: code:addons/password_security/static/src/js/password_gauge.js:0
+#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:0
 #, python-format
-msgid " numeric characters"
-msgstr " caractères numériques"
-
-#. module: password_security
-#. openerp-web
-#: code:addons/password_security/static/src/js/password_gauge.js:63
-#: code:addons/setup/password_security/odoo/addons/password_security/static/src/js/password_gauge.js:63
-#, python-format
-msgid " special characters"
-msgstr " caractères spéciaux"
+msgid "at least %d upper case characters"
+msgstr "au moins %d caractères majuscules"
 
 #. module: password_security
 #: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form

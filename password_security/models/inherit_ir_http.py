@@ -31,7 +31,7 @@ class IrHttp(models.AbstractModel):
         """
         # noinspection PyProtectedMember
         mods = super(IrHttp, cls)._get_translation_frontend_modules_name()
-        return mods + ["password_security"]
+        return mods + ["auth_password_policy", "password_security"]
 
     # endregion
 

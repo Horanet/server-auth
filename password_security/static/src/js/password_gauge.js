@@ -20,8 +20,6 @@ odoo.define("password_security.policy", function(require) {
          * @param {Number} [info.password_estimate=3]
          */
         init: function(info) {
-            this._super(info);
-
             this._password_length = info.password_length || 4;
             this._password_lower = info.password_lower || 1;
             this._password_upper = info.password_upper || 1;
@@ -32,36 +30,47 @@ odoo.define("password_security.policy", function(require) {
 
         toString: function() {
             const msgs = [];
-            const msg_common = _t("at least ");
 
             if (this._password_length > 0) {
-                const msg_password_length =
-                    msg_common + this._password_length + _t(" characters");
-                msgs.push(msg_password_length);
+                msgs.push(
+                    _.str.sprintf(_t("at least %d characters"), this._password_length)
+                );
             }
 
             if (this._password_lower > 0) {
-                const msg_password_lower =
-                    msg_common + this._password_lower + _t(" lower case characters");
-                msgs.push(msg_password_lower);
+                msgs.push(
+                    _.str.sprintf(
+                        _t("at least %d lower case characters"),
+                        this._password_lower
+                    )
+                );
             }
 
             if (this._password_upper > 0) {
-                const msg_password_upper =
-                    msg_common + this._password_lower + _t(" upper case characters");
-                msgs.push(msg_password_upper);
+                msgs.push(
+                    _.str.sprintf(
+                        _t("at least %d upper case characters"),
+                        this._password_upper
+                    )
+                );
             }
 
             if (this._password_numeric > 0) {
-                const msg_password_numeric =
-                    msg_common + this._password_lower + _t(" numeric characters");
-                msgs.push(msg_password_numeric);
+                msgs.push(
+                    _.str.sprintf(
+                        _t("at least %d numeric characters"),
+                        this._password_numeric
+                    )
+                );
             }
 
             if (this._password_special > 0) {
-                const msg_password_special =
-                    msg_common + this._password_lower + _t(" special characters");
-                msgs.push(msg_password_special);
+                msgs.push(
+                    _.str.sprintf(
+                        _t("at least %d special characters"),
+                        this._password_special
+                    )
+                );
             }
 
             return msgs.join(", ");
@@ -149,4 +158,23 @@ odoo.define("password_security.policy", function(require) {
     };
 
     auth_password_policy.recommendations = recommendations;
+});
+
+odoo.define("password_security.Meter", function(require) {
+    "use strict";
+
+    const session = require("web.session");
+    const PasswordMeter = require("auth_password_policy.Meter");
+
+    PasswordMeter.include({
+        init: function(parent, required, recommended) {
+            this._super(parent);
+            this._required = required;
+            this._recommended = recommended;
+        },
+        willStart: function() {
+            return Promise.all([this._super.apply(this, arguments), session.is_bound]);
+        },
+    });
+    return PasswordMeter;
 });
