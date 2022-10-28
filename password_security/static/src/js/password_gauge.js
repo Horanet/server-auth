@@ -20,6 +20,8 @@ odoo.define("password_security.policy", function(require) {
          * @param {Number} [info.password_estimate=3]
          */
         init: function(info) {
+            this._super(info);
+
             this._password_length = info.password_length || 4;
             this._password_lower = info.password_lower || 1;
             this._password_upper = info.password_upper || 1;
@@ -31,43 +33,75 @@ odoo.define("password_security.policy", function(require) {
         toString: function() {
             const msgs = [];
 
-            if (this._password_length > 0) {
+            if (this._password_length > 1) {
                 msgs.push(
                     _.str.sprintf(_t("at least %d characters"), this._password_length)
                 );
+            } else {
+                msgs.push(
+                    _.str.sprintf(_t("at least %d character"), this._password_length)
+                );
             }
 
-            if (this._password_lower > 0) {
+            if (this._password_lower > 1) {
                 msgs.push(
                     _.str.sprintf(
                         _t("at least %d lower case characters"),
                         this._password_lower
                     )
                 );
+            } else {
+                msgs.push(
+                    _.str.sprintf(
+                        _t("at least %d lower case character"),
+                        this._password_lower
+                    )
+                );
             }
 
-            if (this._password_upper > 0) {
+            if (this._password_upper > 1) {
                 msgs.push(
                     _.str.sprintf(
                         _t("at least %d upper case characters"),
                         this._password_upper
                     )
                 );
+            } else {
+                msgs.push(
+                    _.str.sprintf(
+                        _t("at least %d upper case character"),
+                        this._password_upper
+                    )
+                );
             }
 
-            if (this._password_numeric > 0) {
+            if (this._password_numeric > 1) {
                 msgs.push(
                     _.str.sprintf(
                         _t("at least %d numeric characters"),
                         this._password_numeric
                     )
                 );
+            } else {
+                msgs.push(
+                    _.str.sprintf(
+                        _t("at least %d numeric character"),
+                        this._password_numeric
+                    )
+                );
             }
 
-            if (this._password_special > 0) {
+            if (this._password_special > 1) {
                 msgs.push(
                     _.str.sprintf(
                         _t("at least %d special characters"),
+                        this._password_special
+                    )
+                );
+            } else {
+                msgs.push(
+                    _.str.sprintf(
+                        _t("at least %d special character"),
                         this._password_special
                     )
                 );

@@ -2,7 +2,7 @@ from odoo import models
 
 
 class IrHttp(models.AbstractModel):
-    """Surcharge pour ajouter les traductions du module en front."""
+    """Overload to add module translations in front."""
 
     # region Private attributes
     _inherit = "ir.http"

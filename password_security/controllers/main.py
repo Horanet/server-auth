@@ -25,16 +25,17 @@ class PasswordSecuritySession(Session):
 
 class PasswordSecurityHome(AuthSignupHome):
     def get_auth_signup_config(self):
-        super(PasswordSecurityHome, self).get_auth_signup_config()
+        config = super(PasswordSecurityHome, self).get_auth_signup_config()
         company = request.env.company
-        return {
+        config.update({
             "password_length": company.password_length,
             "password_lower": company.password_lower,
             "password_upper": company.password_upper,
             "password_numeric": company.password_numeric,
             "password_special": company.password_special,
             "password_estimate": company.password_estimate,
-        }
+        })
+        return config
 
     def do_signup(self, qcontext):
         password = qcontext.get("password")
