@@ -5,12 +5,12 @@
         name="Password policy data for auth_signup"
     >
         <xpath expr="//input[@name='password']" position="attributes">
-            <attribute name="t-att-password_length">password_length</attribute>
-            <attribute name="t-att-password_lower">password_lower</attribute>
-            <attribute name="t-att-password_upper">password_upper</attribute>
-            <attribute name="t-att-password_numeric">password_numeric</attribute>
-            <attribute name="t-att-password_special">password_special</attribute>
-            <attribute name="t-att-password_estimate">password_estimate</attribute>
+            <attribute name="t-att-data-password_length">password_length</attribute>
+            <attribute name="t-att-data-password_lower">password_lower</attribute>
+            <attribute name="t-att-data-password_upper">password_upper</attribute>
+            <attribute name="t-att-data-password_numeric">password_numeric</attribute>
+            <attribute name="t-att-data-password_special">password_special</attribute>
+            <attribute name="t-att-data-password_estimate">password_estimate</attribute>
         </xpath>
     </template>
 </odoo>
